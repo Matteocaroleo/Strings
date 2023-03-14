@@ -63,18 +63,8 @@ void MOSstring(int* hist, char* mos, int* occurrences){ // Most Occuring Symbol
 	@return occurences of the character
 */
 int SOstring(int* hist, char tosearch){
-	int i = 0;
-	int occurrences = 0;
 
-	while (i < HIST_BINS)
-	{
-		if (i == (int)tosearch)
-		{ 
-			occurrences= hist[i];
-			return occurrences;
-		}
-		i++;
-	}
+	int occurrences = hist[(int)tosearch];
 
 	return occurrences;
 }

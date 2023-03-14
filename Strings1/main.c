@@ -27,7 +27,7 @@
 
 int main() {
 
-
+	int hist[HIST_BINS] = {0};
 	char str[STR_SIZE];
 	char outstr[STR_SIZE];
 	char mos;
@@ -37,27 +37,27 @@ int main() {
 
 	printf("Enter text: ");
 	if (fgets(str, STR_SIZE, stdin) == NULL) {
-		printf("ERROR in Main: cannot read input tetx\n");
+		printf("ERROR in Main: cannot read input text\n");
 		return -1;
 
 	str[strcspn(str, "\n")] = 0; // removes EOL from the string
 
 	}
 	printf("\nstring: %s\n", str);
-
-	MOSstring(str, STR_SIZE, &mos, &occurrences); // Glie le passo per reference, così che possa scriverci direttamente
+	Shist(str, STR_SIZE, hist);
+	MOSstring(hist, &mos, &occurrences); // Glie le passo per reference, così che possa scriverci direttamente
 	printf("The most occurring symbol is '%c' = %d times\n", mos, occurrences);
 
-	occurrences = AOstring(str, STR_SIZE);
+	occurrences = AOstring(hist);
 	printf("The string includes %d alphabet characters\n", occurrences);
 
-	occurrences = DOstring(str, STR_SIZE);
+	occurrences = DOstring(hist);
 	printf("The string includes %d digits\n", occurrences);
 
 
 	printf("Enter a symbol: ");
 	tosearch = getchar();
-	occurrences = SOstring(str, STR_SIZE, tosearch);
+	occurrences = SOstring(hist, tosearch);
 
 	printf("Symbol -%c- appears %d times.", tosearch, occurrences);
 

@@ -4,22 +4,15 @@
 *	Details.
 */
 #pragma once
-#define HIST_BINS 256 
+
 
 #ifndef STRINGSLIB_H
 #define STRINGSLIB_H
+#define HIST_BINS 256 
 
-
-
-void MOSstring(char* instr, int length, char* mos, int* occurrences); // Most Occuring Symbol
-
-
-
-int SOstring(char* instr, int length, char tosearch);
-
-
-int DOstring(char* instr, int length);
-
-
-int AOstring(char* instr, int length);
+void Shist(char* instr, int lenght, int* hist);	//nuova funzione che crea un istogramma
+void MOSstring(int* hist, char* mos, int* occurrences); // Most Occuring Symbol
+int SOstring(int* hist, char tosearch);
+int DOstring(int* hist);
+int AOstring(int* hist);
 #endif

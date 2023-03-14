@@ -1,5 +1,5 @@
 /** \file stringslib.h
-*	\prototypes
+*	\ brief Functions declarations
 * 
 *	Details.
 */

@@ -1,5 +1,5 @@
 /** \file stringslib.c
-*	\brief functions definitions
+*	\brief Functions definitions
 *	
 *	Details.
 */
@@ -81,7 +81,7 @@ int DOstring(int* hist) {
 	while (i < HIST_BINS)
 	{
 		if ((i > 47 && i < 58)&& (hist [i] > 0)) //Così accetto solo le cifre (in ASCII)
-			occurrences++;
+			occurrences += hist[i];
 
 		i++;
 	}
@@ -101,7 +101,7 @@ int AOstring(int* hist) {
 	while (i < HIST_BINS)
 	{
 		if (((i > 64 && i < 91)&& (hist[i] > 0)) || ((i > 96 && i < 123)&& (hist[i] > 0))) //Così accetto solo i caratteri (in ASCII)
-			occurrences++;
+			occurrences += hist[i];
 
 		i++;
 	}
